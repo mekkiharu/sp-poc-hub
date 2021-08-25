@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { Suspense } from 'react';
+import { MuiThemeProvider, createTheme } from '@material-ui/core/styles';
+import { CssBaseline } from '@material-ui/core';
+import { appRoutes } from './routers/app-routes';
+import GlobalStyles from './styles/global/_global';
 
-function App() {
+const App = () => {
+  const theme = createTheme({});
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MuiThemeProvider theme={theme}>
+      <CssBaseline />
+      <GlobalStyles />
+      <Suspense fallback={<div>Loading...</div>}>{appRoutes}</Suspense>
+    </MuiThemeProvider>
   );
-}
+};
 
 export default App;
