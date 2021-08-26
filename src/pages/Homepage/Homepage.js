@@ -6,9 +6,7 @@ const Homepage = (props) => {
   const classes = useStyles();
 
   const _handleRedirect = () => {
-    console.log('====================================');
-    console.log('Redirect!');
-    console.log('====================================');
+    props.history.push('/tables');
   };
 
   return (
