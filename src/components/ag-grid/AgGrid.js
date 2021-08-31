@@ -4,7 +4,6 @@ import { AgGridReact, AgGridColumn } from 'ag-grid-react';
 
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-material.css';
-
 const AgGrid = () => {
   const [gridApi, setGridApi] = useState();
   const [, setGridColumnApi] = useState();

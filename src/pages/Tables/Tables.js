@@ -3,6 +3,8 @@ import { Container, Typography, Button, ButtonGroup } from '@material-ui/core';
 
 import AgGrid from '../../components/ag-grid/AgGrid';
 import MuiDataTable from '../../components/mui-datatable/mui-datatable';
+import RDataGrid from '../../components/react-data-grid/r-data-grid';
+
 import useStyles from './Tables.style';
 
 const Tables = () => {
@@ -27,6 +29,12 @@ const Tables = () => {
       Component: MuiDataTable,
       buttonText: 'MUI Data Table',
       label: 'MUI DataTables - GregNB'
+    },
+    {
+      name: 'rDataGrid',
+      Component: RDataGrid,
+      buttonText: 'React Data Grid',
+      label: 'React Data Grid'
     }
   ];
 
@@ -37,7 +45,7 @@ const Tables = () => {
 
       <ButtonGroup>
         {BUTTON_CONSTANT.map((button) => (
-          <Button variant="contained" onClick={() => setActiveComponent(button)}>
+          <Button key={button.name} variant="contained" onClick={() => setActiveComponent(button)}>
             {button.buttonText}
           </Button>
         ))}
